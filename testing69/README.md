@@ -8,6 +8,7 @@ This project takes heavy inspiration from [DiscordChatExporter's](https://github
 - infinite scroll to render content progressively
 
 # ToDo
+- reverse infinite scroll where most recent message is displayed at bottom and content is generated facing up
 - preamble and postamble elements
 - file selection dialog
 - ability to bookmark/favorite message logs
