@@ -15,7 +15,9 @@
         </div>
     </body>
     <script>
-
+//add code to initialize messages object after ajax_get complete and json parsed
+//shouldnt have to re-get the json every time the construct messages function is called
+        
 function scrollHandler(scrollEvent) {
     var B = document.getElementById('container'),
       DE = document.getElementById('container'),
@@ -168,13 +170,14 @@ function scrollHandler(scrollEvent) {
 
 let start = 0,
     step = 20;
-
+//to reverse where start is equal to messages.lenth and step is start minus 20????
+//call every time scroll hits top then i minus minus to go down a step and stop at start????
 let chatlog;
     chatlog = document.getElementsByClassName("chatlog")[0];
     document.getElementById('container').addEventListener('scroll', scrollHandler);
     ajax_get('msg.json', function(messages) {
-    console.log(messages)
-    console.log(messages.at(-1).timestamp)
+        console.log(messages)
+        console.log(messages.at(-1).timestamp) //logs timestamp of last message
         for(var i = start; i < step; i++) {
         //avatar
         var messagesContainer = document.createElement("div");
@@ -307,7 +310,7 @@ let chatlog;
         }
     }
     });
-
+//maybe move this to top
 function ajax_get(url, callback) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
